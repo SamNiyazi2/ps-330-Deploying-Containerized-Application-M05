@@ -12,11 +12,14 @@ $pgUsername = 'pguser'
 #$pgPassword = Read-Host -Prompt 'Password for Postgres user' -AsSecureString
 $pgPassword = "DbUserPass0817"
 
+
+# -p $([System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($pgPassword)))
+
 az postgres server create `
     -l $region -g $rg -n $pgServer `
     --version '11' --sku-name $pgSku `
     -u $pgUsername `
-    -p $([System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($pgPassword)))
+    -p $pgPassword
     
 # use this to find sizes (SKUs):
 # az postgres server list-skus -l $region -o table

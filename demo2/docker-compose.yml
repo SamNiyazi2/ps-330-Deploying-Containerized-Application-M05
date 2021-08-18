@@ -18,7 +18,7 @@ services:
     ports:
       - "80:80"
     environment:
-      Environment: ''
+      Environment: 'm05-04-ps-330'
       Logging__LogLevel__Default: 'Warning'
       Logging__LogLevel__WiredBrain: 'Information'
     secrets:

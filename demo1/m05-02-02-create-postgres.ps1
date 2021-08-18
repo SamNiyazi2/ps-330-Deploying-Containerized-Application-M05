@@ -1,7 +1,7 @@
 
 # 08/16/2021 08:17 am - SSN 
 
-.\azure\postgres.ps1
+. $PSScriptRoot\azure\postgres.ps1
 
 write-host ""
 
